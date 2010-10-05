@@ -1,7 +1,7 @@
-This is a plugin for Movable Type 4. It primarily serves as an example of how to monkey-patch core MT methods in Perl, but with a few improvements it could also make a generally useful plugin.
+This is a plugin for Movable Type 4. It primarily serves as an example of how to monkey-patch core MT methods in Perl, but it also serves a useful purpose if you use author custom fields on your author archive listings.
 
-In Movable Type Community Solution (MTCS), authors have profile fields, which you might be displaying on the author's archive listing. The problem with that approach, though, is that the author archive listing isn't automatically rebuilt by MTCS when the author changes their profile. This plugin fixes that.
+In Movable Type Community Solution (MTCS, which is part of MT Pro), authors have profile custom fields. It many template sets, it makes sense to display some of these fields on the author's entry archive listing.  But unfortunately, MTCS does not automatically rebuild an author's archive listing when the author saves their profile in MTCS.
 
-Since MTCS triggers no new callback for a profile save, this plugin monkey-patches MTCS. 
+This plugin fixes that problem, which can only be solved by monkey-patching MTCS.  The reason is that MTCS does not expose a callback to specifically designate a profile save.  Meanwhile the object-level author post-save callback is also insufficient, because MTCS saves custom fields after saving the base author object, not before.
 
-If you're using it in a production system with many blogs, many users, or different types of authors, you should probably alter the monkeypatched function to only trigger a rebuild in particular situations. This is left as an exercise to the reader.
+Note -- If you're using this plugin in a production system with many blogs, many users, or different types of authors, you should probably alter the monkeypatched function to only trigger a rebuild in particular situations. This is left as an exercise to the reader. Feel free to fork this repo and contribute!
