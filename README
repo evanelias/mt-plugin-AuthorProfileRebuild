@@ -1,0 +1,7 @@
+This is a plugin for Movable Type 4. It primarily serves as an example of how to monkey-patch core MT methods in Perl, but with a few improvements it could also make a generally useful plugin.
+
+In Movable Type Community Solution (MTCS), authors have profile fields, which you might be displaying on the author's archive listing. The problem with that approach, though, is that the author archive listing isn't automatically rebuilt by MTCS when the author changes their profile. This plugin fixes that.
+
+Since MTCS triggers no new callback for a profile save, this plugin monkey-patches MTCS. 
+
+If you're using it in a production system with many blogs, many users, or different types of authors, you should probably alter the monkeypatched function to only trigger a rebuild in particular situations. This is left as an exercise to the reader.

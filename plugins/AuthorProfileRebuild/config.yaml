@@ -1,0 +1,8 @@
+name: AuthorProfileRebuild
+id: AuthorProfileRebuild
+author_link: http://www.github.com/eelias
+author_name: Evan Elias
+description: When an author saves their profile in MTCS, this plugin rebuilds their author archives.
+version: 1.0
+
+init_app: $AuthorProfileRebuild::AuthorProfileRebuild::App::init_app
